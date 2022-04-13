@@ -7,8 +7,8 @@ class handler(BaseHTTPRequestHandler):
     
 
     def do_GET(self):
-        path=self.path 
-        url_components=parse.urlsplit(path)
+        mypath=self.path 
+        url_components=parse.urlsplit(mypath)
         query_string_list=parse.parse_qsl(url_components.query)
         dic=dict(query_string_list)
         name=dic["name"].upper()
@@ -19,5 +19,5 @@ class handler(BaseHTTPRequestHandler):
         self.end_headers()
         
         self.wfile.write((my_name).encode())
-        return
+         
       
