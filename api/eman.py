@@ -9,7 +9,7 @@ class handler(BaseHTTPRequestHandler):
     self.send_header('Content-type', 'text/plain')
     msg="hello "
     self.wfile.write(msg.encode())
-    return
+     
 
 
 """"
