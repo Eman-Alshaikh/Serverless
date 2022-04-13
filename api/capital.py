@@ -7,6 +7,10 @@ class handler(BaseHTTPRequestHandler):
     
 
     def do_GET(self):
+        """
+        this method will show for you a greeting message with your name in capital 
+        
+        """
         mypath=self.path 
         url_components=parse.urlsplit(mypath)
         query_string_list=parse.parse_qsl(url_components.query)
