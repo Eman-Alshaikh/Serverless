@@ -20,10 +20,9 @@ class handler(BaseHTTPRequestHandler):
 
 
 
-
-"""from http.server import BaseHTTPRequestHandler
+from http.server import BaseHTTPRequestHandler
 from urllib import parse 
-import requests
+import platform
 
 
 class handler(BaseHTTPRequestHandler):
@@ -32,8 +31,8 @@ class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         path=self.path 
         url_components=parse.urlsplit(path)
-        query_string=parse.parse_qsl(url_components.query)
-        dic=dict(query_string)
+        query_string_list=parse.parse_qsl(url_components.query)
+        dic=dict(query_string_list)
         name=dic["name"].upper()
         my_name=f"{name},{name}!"
 
@@ -43,4 +42,4 @@ class handler(BaseHTTPRequestHandler):
         
         self.wfile.write((my_name).encode())
         return
-        """
+      
